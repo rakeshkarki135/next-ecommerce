@@ -13,7 +13,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+
+      // custom css
+    colors : {
+      rakesh : "#F35C7A",
+    }
+    
     },
+    
+    
   },
   plugins: [],
 };
