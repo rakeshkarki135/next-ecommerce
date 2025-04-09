@@ -37,8 +37,16 @@ const NavbarIcons = () => {
 
             )}
 
+            <Image src="/notification.png" 
+                alt="" 
+                width={22} 
+                height={22} 
+                className="cursor-pointer" 
+                    
+            />
+
             <div className="relative cursor-pointer">
-                <Image src="/notification.png" 
+                <Image src="/cart.png" 
                     alt="" 
                     width={22} 
                     height={22} 
@@ -50,7 +58,6 @@ const NavbarIcons = () => {
             </div>
             {  isCartOpen && (  <CartModal />  )}
 
-            <Image src="/cart.png" alt="" width={22} height={22} className="cursor-pointer" />
         </div>
     )
 }
