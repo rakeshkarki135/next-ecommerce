@@ -22,7 +22,7 @@ const SinglePage = async ({ params }: { params: { slug:string }}) => {
 
     const product = products.items[0]
 
-    console.log(product.variants)
+    console.log(product.productOptions)
 
     return (
         <div className="px-4 lg:px-8 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">
@@ -42,14 +42,19 @@ const SinglePage = async ({ params }: { params: { slug:string }}) => {
                     <h2 className="font-medium text-2xl">{product.priceData?.price}</h2>
                     ) : (
                         <div className="flex items-center gap-4">
-                            <h3 className="text-xl txt-gray-500 line-through">${product.priceData?.price}</h3>
+                            <h3 className="text-xl text-gray-500 line-through">${product.priceData?.price}</h3>
                             <h2 className="font-medium text-2xl">${product.priceData?.discountedPrice}</h2>
                         </div>
                 )}
                     
                 <div className="h-[2px] bg-gray-100" />
 
-                <CustomizeProducts />
+                { product.variants && product.productOptions && (
+                    <CustomizeProducts productId={product._id!} variants={product.variants} productOptions={product.productOptions} />
+
+                )
+                
+                }
                 <Add />
 
                 <div className="h-[2px] bg-gray-100" />
